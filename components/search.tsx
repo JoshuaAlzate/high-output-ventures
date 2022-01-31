@@ -2,12 +2,20 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Container, Flex, Select } from "@chakra-ui/react";
 import { useState } from "react";
 import { Category } from "../model/category.model";
+import { useDispatch } from "react-redux";
+import { updateBusinessSearchResult } from "../redux/actions/business.actions";
 
 const Search = ({ categories, locations } : { categories: Category[], locations: { code: string, name: string }}) => {
     const [category, setCategory] = useState('');
     const [location, setLocation] = useState('');
-
+    const dispatch = useDispatch();
+    
     const searchAction = async () => {
+        const result = await fetch('/api/business', {
+            method: 'POST',
+            body: JSON.stringify({ category, location })
+        }).then(searchResult => searchResult.json());
+        dispatch(updateBusinessSearchResult(result?.search?.business));
     }
 
     return (
