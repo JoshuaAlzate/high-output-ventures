@@ -8,14 +8,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.8",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.8.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@reduxjs/toolkit": "^1.7.1",
+    "cross-fetch": "^3.1.5",
     "framer-motion": "^5",
+    "graphql": "^16.3.0",
     "next": "12.0.9",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.6"
   },
   "devDependencies": {
     "@types/node": "17.0.13",
