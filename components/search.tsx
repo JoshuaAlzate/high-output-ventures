@@ -5,11 +5,11 @@ import { Category } from "../model/category.model";
 import { useDispatch } from "react-redux";
 import { updateBusinessSearchResult } from "../redux/actions/business.actions";
 
-const Search = ({ categories, locations } : { categories: Category[], locations: { code: string, name: string }}) => {
+const Search = ({ categories, locations } : { categories: Category[], locations: { code: string, name: string }[]}) => {
     const [category, setCategory] = useState('');
     const [location, setLocation] = useState('');
     const dispatch = useDispatch();
-    
+
     const searchAction = async () => {
         const result = await fetch('/api/business', {
             method: 'POST',
