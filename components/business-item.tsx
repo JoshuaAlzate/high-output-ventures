@@ -11,7 +11,7 @@ const BusinessItem = ({ business }: { business: Business }) => {
                 <Box display='flex' alignItems='baseline' overflow={'scroll'}>
                     {
                         business.categories ? business.categories.map(category => (
-                            <Badge borderRadius='full' px='2' colorScheme='teal'>
+                            <Badge borderRadius='full' px='2' colorScheme='teal' key={category.alias}>
                                 {category.title}
                             </Badge>
                         )) : ''
